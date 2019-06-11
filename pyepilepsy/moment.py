@@ -7,7 +7,7 @@
 import numpy as np
 from numpy import ndarray
 
-def moment(a, moment, axis=0):
+def moment(a, moment):
     """
     Calculates the nth moment about the mean for a sample.
     Parameters
@@ -40,7 +40,7 @@ def moment(a, moment, axis=0):
             n_list.append(current_n)
 
         # Starting point for exponentiation by squares
-        a_zero_mean = a - np.ma.expand_dims(a.mean(axis), axis)
+        a_zero_mean = a - np.ma.expand_dims(a.mean(),0)
         if n_list[-1] == 1:
             s = a_zero_mean.copy()
         else:
@@ -51,4 +51,4 @@ def moment(a, moment, axis=0):
             s = s**2
             if n % 2:
                 s *= a_zero_mean
-        return s.mean(axis)
+        return s.mean()
