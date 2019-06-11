@@ -1,3 +1,9 @@
+'''
+- Sourced from scipy (https://github.com/scipy/scipy)
+- Original code by Pierre GF Gerard-Marchant
+- Specific optimization from Matthew Anderson
+'''
+
 import numpy as np
 from .moment import moment
 
