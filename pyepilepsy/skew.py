@@ -1,7 +1,13 @@
+'''
+- Sourced from scipy (https://github.com/scipy/scipy)
+- Original code by Pierre GF Gerard-Marchant
+- Specific optimization from Matthew Anderson
+'''
+
 import numpy as np
 from .moment import moment
 
-def skew(a, axis=0, bias=True):
+def skew(a, axis=0, bias=False):
     """
     Computes the skewness of a data set.
     Parameters
@@ -18,17 +24,13 @@ def skew(a, axis=0, bias=True):
     skewness : ndarray
         The skewness of values along an axis, returning 0 where all values are
         equal.
-    Notes
-    -----
-    For more details about `skew`, see `stats.skew`.
     """
-    a, axis = _chk_asarray(a,axis)
     n = a.count(axis)
     m2 = moment(a, 2, axis)
     m3 = moment(a, 3, axis)
     olderr = np.seterr(all='ignore')
     try:
-        vals = ma.where(m2 == 0, 0, m3 / m2**1.5)
+        vals = np.ma.where(m2 == 0, 0, m3 / m2**1.5)
     finally:
         np.seterr(**olderr)
 
@@ -37,6 +39,6 @@ def skew(a, axis=0, bias=True):
         if can_correct.any():
             m2 = np.extract(can_correct, m2)
             m3 = np.extract(can_correct, m3)
-            nval = ma.sqrt((n-1.0)*n)/(n-2.0)*m3/m2**1.5
+            nval = np.ma.sqrt((n-1.0)*n)/(n-2.0)*m3/m2**1.5
             np.place(vals, can_correct, nval)
     return vals
