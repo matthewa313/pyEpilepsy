@@ -19,7 +19,7 @@ numpy >= 1.9.2
 Through the command line:
 
 ```
-pip install git+https://
+pip install git+https://github.com/matthewa313/pyEpilepsy.git
 ```
 
 ## Contributing
