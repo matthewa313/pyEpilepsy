@@ -69,4 +69,4 @@ def spectral_entropy(sig, band, Fs):
     for i in range(0, len(power_ratio) - 1):
         spectral_entropy += power_ratio[i] * np.log(power_ratio[i])
     spectral_entropy /= np.log( len(power_ratio) )  # to save time, minus one is omitted
-    return -1 * spectral_entropy
+    return -spectral_entropy
