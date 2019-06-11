@@ -33,8 +33,7 @@ http://www.python.org/dev/peps/pep-0008/
 """
 
 from .hurstexp import hurst
-from .embed_seq import embed_seq
-from .bin_power import bin_power
-from .spectral_entropy import spectral_entropy
 from .permutation_entropy import permutation_entropy
+from .skew_kurtosis import skew_kurt # yes, this line is correct
+from .spectral_entropy import spectral_entropy
 from .svd_entropy import svd_entropy
