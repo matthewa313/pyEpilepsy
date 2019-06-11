@@ -1,16 +1,17 @@
 import numpy as np
 from .moment import moment
 
-def kurtosis(a, axis=0, fisher=True, bias=True):
+def kurtosis(a, axis=0, fisher=True, bias=False):
     """
     Computes the excess kurtosis of a dataset.
     Kurtosis is the fourth central moment divided by the square of the
     variance minus 3.0.
     If bias is False then the kurtosis is calculated using k statistics to
-    eliminate bias coming from biased moment estimators
+    eliminate bias coming from biased moment estimators.
+    
     Parameters
     ----------
-    a : array
+    a : ndarray
         data for which the kurtosis is calculated
     axis : int or None, optional
         Axis along which the kurtosis is calculated. Default is 0.
@@ -22,7 +23,6 @@ def kurtosis(a, axis=0, fisher=True, bias=True):
     kurtosis : array
         The kurtosis of values along an axis.
     """
-    a = np.ma.asanyarray(a)
     m2 = moment(a, 2, axis)
     m4 = moment(a, 4, axis)
     olderr = np.seterr(all='ignore')
