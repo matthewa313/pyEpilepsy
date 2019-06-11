@@ -44,12 +44,6 @@ def permutation_entropy(sig, n, tau):
     Bandt, Christoph, and Bernd Pompe. "Permutation entropy: a natural
     complexity measure for time series." Physical Review Letters 88.17
     (2002): 174102.
-    Examples
-    ----------
-    >>> import pyeeg
-    >>> sig = [1,2,4,5,12,3,4,5]
-    >>> pyeeg.permutation_entropy(sig,5,1)
-    2.0
     """
 
     pe_seq = []
