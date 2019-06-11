@@ -24,33 +24,6 @@ def embed_seq(time_series, tau, embedding_dimension):
     y
         2-embedding_dimension list
         embedding matrix built
-    Examples
-    ---------------
-    >>> import pyeeg
-    >>> a=range(0,9)
-    >>> pyeeg.embed_seq(a,1,4)
-    array([[0,  1,  2,  3],
-           [1,  2,  3,  4],
-           [2,  3,  4,  5],
-           [3,  4,  5,  6],
-           [4,  5,  6,  7],
-           [5,  6,  7,  8]])
-    >>> pyeeg.embed_seq(a,2,3)
-    array([[0,  2,  4],
-           [1,  3,  5],
-           [2,  4,  6],
-           [3,  5,  7],
-           [4,  6,  8]])
-    >>> pyeeg.embed_seq(a,4,1)
-    array([[0],
-           [1],
-           [2],
-           [3],
-           [4],
-           [5],
-           [6],
-           [7],
-           [8]])
     """
     shape = (
         time_series.size - tau * (embedding_dimension - 1),
