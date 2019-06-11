@@ -80,14 +80,14 @@ def bin_power(sig, band, Fs):
         frequency bins.
     """
 
-    c = abs ( numpy.fft.fft(sig) )
+    c = abs ( np.fft.fft(sig) )
     power = np.zeros(len(band) - 1)
     for freq_index in range(0, len(band) - 1):
         freq = float(band[freq_index])
         next_freq = float(band[freq_index + 1])
         power[freq_index] = sum(
-            c[int(numpy.floor(freq / Fs * len(sig))): 
-                int(numpy.floor(next_freq / Fs * len(sig)))]
+            c[int(np.floor(freq / Fs * len(sig))): 
+                int(np.floor(next_freq / Fs * len(sig)))]
         )
     power_ratio = power / sum(power)
     return power, power_ratio
