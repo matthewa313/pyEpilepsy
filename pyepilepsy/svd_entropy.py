@@ -9,4 +9,4 @@ def svd_entropy(X, Tau, DE):
     y = embed_seq(sig, tau, dE)
     w = np.linalg.svd(y, compute_uv=0) / sum(W)
 
-    return -1 * sum(W * np.log(W))
+    return -sum(W * np.log(W))
