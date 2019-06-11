@@ -5,6 +5,7 @@
 '''
 
 import numpy as np
+from numpy import ndarray
 
 def moment(a, moment, axis=0):
     """
