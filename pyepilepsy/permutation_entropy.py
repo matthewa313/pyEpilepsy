@@ -24,8 +24,8 @@ def permutation_entropy(sig, n, tau):
     Notes
     ----------
     Suppose the given time series is X =[x(1),x(2),x(3),...,x(N)].
-    We first build embedding matrix Em, of dimension(n*N-n+1),
-    such that the ith row of Em is x(i),x(i+1),..x(i+n-1). Hence
+    We first build embedding matrix em, of dimension(n*N-n+1),
+    such that the ith row of em is x(i),x(i+1),..x(i+n-1). Hence
     the embedding lag and the embedding dimension are 1 and n
     respectively. We build this matrix from a given time series,
     sig, by calling pyEpilepsy function embed_seq(sig,1,n).
@@ -34,9 +34,9 @@ def permutation_entropy(sig, n, tau):
     The order in which the integers are placed within a row is the
     same as those of the original elements:0 is placed where the smallest
     element of the row was and n-1 replaces the largest element of the row.
-    To calculate the Permutation entropy, we calculate the entropy of PeSeq.
+    To calculate the Permutation entropy, we calculate the entropy of pe_seq.
     In doing so, we count the number of occurrences of each permutation
-    in PeSeq and write it in a sequence, RankMat. We then use this sequence to
+    in pe_seq and write it in a sequence, rank_mat. We then use this sequence to
     calculate entropy by using Shannon's entropy formula.
     Permutation entropy is usually calculated with n in range of 3 and 7.
     References
