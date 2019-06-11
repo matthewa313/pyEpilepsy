@@ -6,13 +6,12 @@ def bin_power(sig):
     """
     This is NOT a general purpose function.
     Compute power in each frequency bin specified by Band from FFT result of
-    sig. By default, X is a real signal.
+    sig. By default, sig is a real signal.
 
     Note
     -----
-    This function automatically assumes banding and Hertz values and assumes the
-    number of timesteps in 'sig' (153600). Use the following overloaded
-    function to avoid this.
+    This function automatically assumes banding and Hertz values.
+    Use the following overloaded function to avoid this.
 
     Parameters
     -----------
@@ -37,8 +36,8 @@ def bin_power(sig):
         freq = float(band[freq_index])
         next_freq = float(band[freq_index + 1])
         power[freq_index] = sum(
-            c[int(np.floor(freq / 600)): 
-                int(np.floor(next_freq / 600))]
+            c[int(np.floor(freq / Fs * len(sig))): 
+                int(np.floor(next_freq / Fs * len(sig)))]
         )
     power_ratio = power / sum(power)
     return power, power_ratio
