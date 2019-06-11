@@ -25,24 +25,16 @@ import numpy as np
 
 **STYLE CONVENTIONS**
 
-I follow the following style guide for my progra to code my program
+I follow this style guide:
 http://www.python.org/dev/peps/pep-0008/
 
 --------------------------------------------------
 
 """
 
-'''from .entropy import ap_entropy, permutation_entropy, samp_entropy, spectral_entropy, svd_entropy
-from .spectrum import bin_power
-from .detrended_fluctuation_analysis import dfa
-from .embedded_sequence import embed_seq
-from .fisher_info import fisher_info
-from .fractal_dimension import hfd, pfd
-from .hjorth_mobility_complexity import hjorth
-from .hurst import hurst
-from .information_based_similarity import information_based_similarity
-from .largest_lyauponov_exponent import LLE
-'''
-
 from .hurstexp import hurst
+from .embed_seq import embed_seq
+from .bin_power import bin_power
 from .spectral_entropy import spectral_entropy
+from .permutation_entropy import permutation_entropy
+from .svd_entropy import svd_entropy
