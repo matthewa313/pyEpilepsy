@@ -8,7 +8,6 @@ def kurtosis(a, axis=0, fisher=True, bias=True):
     variance minus 3.0.
     If bias is False then the kurtosis is calculated using k statistics to
     eliminate bias coming from biased moment estimators
-    Use `kurtosistest` to see if result is close enough to normal.
     Parameters
     ----------
     a : array
@@ -16,26 +15,19 @@ def kurtosis(a, axis=0, fisher=True, bias=True):
     axis : int or None, optional
         Axis along which the kurtosis is calculated. Default is 0.
         Does not compute for value: none.
-    fisher : bool, optional
-        If True, Fisher's definition is used (normal ==> 0.0). If False,
-        Pearson's definition is used (normal ==> 3.0).
     bias : bool, optional
         If False, then the calculations are corrected for statistical bias.
     Returns
     -------
     kurtosis : array
-        The kurtosis of values along an axis. If all values are equal,
-        return -3 for Fisher's definition and 0 for Pearson's definition.
-    Notes
-    -----
-    For more details about `kurtosis`, see `stats.kurtosis`.
+        The kurtosis of values along an axis.
     """
-    a = ma.asanyarray(a)
+    a = np.ma.asanyarray(a)
     m2 = moment(a, 2, axis)
     m4 = moment(a, 4, axis)
     olderr = np.seterr(all='ignore')
     try:
-        vals = ma.where(m2 == 0, 0, m4 / m2**2.0)
+        vals = np.ma.where(m2 == 0, 0, m4 / m2**2.0)
     finally:
         np.seterr(**olderr)
 
