@@ -81,4 +81,4 @@ def permutation_entropy(sig, n, tau):
     rank_mat = np.true_divide(rank_mat, rank_mat.sum())
     entropy_mat = np.multiply(np.log2(rank_mat), rank_mat)
 
-    return -1 * entropy_mat.sum()
+    return -entropy_mat.sum()
