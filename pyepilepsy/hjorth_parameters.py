@@ -2,16 +2,16 @@ def hjorth(sig):
     """ Compute Hjorth mobility and complexity of a time series from either two
     cases below:
         1. X, the time series of type list (default)
-        2. D, a first order differential sequence of X (if D is provided,
-           recommended to speed up)
-    In case 1, D is computed using Numpy's Difference function.
+        
     Notes
     -----
-    Computed mobility and complexity together to minimize CPU time.
+    Computed activity, mobility and complexity together to minimize CPU time.
     
     Parameters
     ----------
-    X list a time series
+    sig
+        1-D numpy array
+        a time series
 
     Returns
     -------
