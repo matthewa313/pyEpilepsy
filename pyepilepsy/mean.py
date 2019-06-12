@@ -1,6 +1,6 @@
 from numpy.core import umath
 
-def mean(a, axis=None, dtype=np.float128):
+def mean(a, axis=None):
     axis = (axis,)
     items = 1
     for ax in axis:
