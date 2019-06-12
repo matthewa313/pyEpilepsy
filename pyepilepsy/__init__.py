@@ -27,6 +27,7 @@ I follow this style guide:
 http://www.python.org/dev/peps/pep-0008/
 """
 
+from .hjorth_parameters import hjorth
 from .hurstexp import hurst
 from .mean import mean
 from .permutation_entropy import permutation_entropy
