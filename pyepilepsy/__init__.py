@@ -28,6 +28,7 @@ http://www.python.org/dev/peps/pep-0008/
 """
 
 from .hurstexp import hurst
+from .mean import mean
 from .permutation_entropy import permutation_entropy
 from .skew_kurtosis import skew_kurtosis
 from .spectral_entropy import spectral_entropy
