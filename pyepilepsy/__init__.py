@@ -29,6 +29,6 @@ http://www.python.org/dev/peps/pep-0008/
 
 from .hurstexp import hurst
 from .permutation_entropy import permutation_entropy
-from .skew_kurtosis import skew_kurt
+from .skew_kurtosis import skew_kurtosis
 from .spectral_entropy import spectral_entropy
 from .svd_entropy import svd_entropy
