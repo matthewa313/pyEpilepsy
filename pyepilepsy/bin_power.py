@@ -34,4 +34,5 @@ def bin_power(sig):
             c[int(np.floor(freq / Fs * len(sig))): 
                 int(np.floor(next_freq / Fs * len(sig)))]
         )
-    return power
+    power_ratio = power / sum(power)
+    return power, power_ratio
