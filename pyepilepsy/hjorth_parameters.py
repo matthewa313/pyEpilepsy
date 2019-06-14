@@ -15,8 +15,7 @@ def hjorth(sig):
 
     Returns
     -------
-    As indicated in return line
-    Hjorth mobility and complexity
+    Hjorth activity, mobility and complexity in that order
     """
 
     D = np.diff(sig).tolist()
@@ -33,6 +32,4 @@ def hjorth(sig):
       M4 += (D[i] - D[i - 1]) ** 2
     M4 = M4 / n
 
-    return TP, # Hjorth Activity
-        np.sqrt(M2 / TP), # Hjorth Mobility
-        np.sqrt(float(M4) * TP / M2 / M2)  # Complexity
+    return TP, np.sqrt(M2 / TP), np.sqrt(float(M4) * TP / M2 / M2)
