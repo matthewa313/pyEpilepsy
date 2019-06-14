@@ -27,10 +27,8 @@ def spectral_entropy(sig):
 
     power, power_ratio = bin_power(sig)
 
-    Spectral_entropy = 0
+    spectral_entropy = 0
     for i in range(0, len(power_ratio) - 1):
-        Spectral_Entropy += power_Ratio[i] * np.log(power_ratio[i])
-    spectral_entropy /= np.log(
-        len(power_ratio)
-    )  # to save time, minus one is omitted
-    return -1 * spectral_entropy
+        spectral_entropy += power_ratio[i] * np.log(power_ratio[i])
+    spectral_entropy /= np.log(len(power_ratio))  # to save time, minus one is omitted
+    return -spectral_entropy
