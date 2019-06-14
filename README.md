@@ -8,8 +8,6 @@ These instructions will get you using these feature extraction functions in your
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
 ```
 numpy >= 1.9.2
 ```
