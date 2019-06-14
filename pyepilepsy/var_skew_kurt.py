@@ -7,7 +7,7 @@
 import numpy as np
 from .moment import moment
 
-def skew_kurtosis(a, axis=0, bias=False):
+def var_skew_kurt(a, axis=0, bias=False):
     """
     Computes the excess kurtosis of a dataset.
     Kurtosis is the fourth central moment divided by the square of the
@@ -29,7 +29,6 @@ def skew_kurtosis(a, axis=0, bias=False):
     kurtosis : float64
         The kurtosis of values
     """
-    n = a.count(axis)
     m2 = np.var(a)
     m3 = moment(a, 3)
     m4 = moment(a, 4)
@@ -55,4 +54,4 @@ def skew_kurtosis(a, axis=0, bias=False):
             m4 = np.extract(can_correct, m4)
             nval = 1.0/(n-2)/(n-3)*((n*n-1.0)*m4/m2**2.0-3*(n-1)**2.0)
             np.place(vals, can_correct, nval+3.0)
-    return skew_vals, kurt_vals-3
+    return m2, skew_vals, kurt_vals-3
