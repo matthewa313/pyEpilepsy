@@ -36,3 +36,5 @@ from .skew_kurtosis import skew_kurtosis
 from .spectral_entropy import spectral_entropy
 from .svd_entropy import svd_entropy
 from .zero_crossings import zero_crossings
+
+from .moment import moment
