@@ -41,5 +41,3 @@ def bin_power(sig):
         )
     power_ratio = power / sum(power)
     return power, power_ratio
-
-def bin_power(sig, band, Fs):
