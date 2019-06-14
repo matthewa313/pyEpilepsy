@@ -44,14 +44,14 @@ def var_skew_kurt(a, axis=0, bias=False):
         skew_can_correct = (n > 2) & (m2 > 0)
         kurt_can_correct = (n > 3) & (m2 is not ma.masked and m2 > 0)
         if skew_can_correct.any():
-            m2 = np.extract(can_correct, m2)
-            m3 = np.extract(can_correct, m3)
+            m2 = np.extract(skew_can_correct, m2)
+            m3 = np.extract(skew_can_correct, m3)
             nval = np.ma.sqrt((n-1.0)*n)/(n-2.0)*m3/m2**1.5
-            np.place(vals, can_correct, nval)
+            np.place(vals, skew_can_correct, nval)
         if kurt_can_correct.any():
-            n = np.extract(can_correct, n)
-            m2 = np.extract(can_correct, m2)
-            m4 = np.extract(can_correct, m4)
+            n = np.extract(kurt_can_correct, n)
+            m2 = np.extract(kurt_can_correct, m2)
+            m4 = np.extract(kurt_can_correct, m4)
             nval = 1.0/(n-2)/(n-3)*((n*n-1.0)*m4/m2**2.0-3*(n-1)**2.0)
-            np.place(vals, can_correct, nval+3.0)
+            np.place(vals, kurt_can_correct, nval+3.0)
     return m2, skew_vals, kurt_vals-3
