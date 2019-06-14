@@ -17,7 +17,7 @@ def skew_kurtosis(a, axis=0, bias=False):
     
     Parameters
     ----------
-    a : ndarray
+    a : 1-D array
         data for which the kurtosis is calculated
     axis : int or None, optional
         Axis along which the kurtosis is calculated. Default is 0.
@@ -26,13 +26,13 @@ def skew_kurtosis(a, axis=0, bias=False):
         If False, then the calculations are corrected for statistical bias.
     Returns
     -------
-    kurtosis : array
-        The kurtosis of values along an axis.
+    kurtosis : float64
+        The kurtosis of values
     """
     n = a.count(axis)
-    m2 = moment(a, 2, axis)
-    m3 = moment(a, 3, axis)
-    m4 = moment(a, 4, axis)
+    m2 = np.var(a)
+    m3 = moment(a, 3)
+    m4 = moment(a, 4)
     olderr = np.seterr(all='ignore')
     try:
         skew_vals = vals = np.ma.where(m2 == 0, 0, m3 / m2**1.5)
