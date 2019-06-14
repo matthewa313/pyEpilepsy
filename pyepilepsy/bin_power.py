@@ -31,8 +31,8 @@ def bin_power(sig):
         freq = float(band[freq_index])
         next_freq = float(band[freq_index + 1])
         power[freq_index] = sum(
-            c[int(np.floor(freq / Fs * len(sig))): 
-                int(np.floor(next_freq / Fs * len(sig)))]
+            c[int(np.floor(freq * 30)): 
+                int(np.floor(next_freq * 30))]
         )
     power_ratio = power / sum(power)
     return power, power_ratio
