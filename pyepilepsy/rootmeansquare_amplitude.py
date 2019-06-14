@@ -1,4 +1,4 @@
 import numpy as np
 
 def rms(sig):
-    return 0
+    return np.sqrt(np.mean(np.square(sig)))
