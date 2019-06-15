@@ -4,7 +4,7 @@ A Python module for EEG feature extraction to aid in epileptic episode (seizure)
 
 ## Disclaimer
 
-I am building a device that can predict epileptic episodes well in advance using machine learning. This python module is being built to aide in live-time feature extraction of brain wave data and has been optimized specifically for my device. I have open sourced via GitHub for no reason other than convenience.  The functions contained within the module are NOT general purpose functions and must be largely adapted for other use.  Finally, it is worth noting that much of this code is optimizing from functions created through forestboa/pyEEG and scipy/scipy.
+I am building a device that can predict epileptic episodes from brain waves using machine learning. This python module is being built to aide in live-time feature extraction of brain wave data and has been optimized specifically for my device. I have open sourced via GitHub for no reason other than convenience.  The functions contained within the module are NOT general purpose functions and must be largely adapted for other use. Also, much of this code was developed by taking existing code from forestboa/pyEEG and scipy/scipy and optimizing it for my needs.
 
 ## Getting Started
 
