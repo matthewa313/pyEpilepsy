@@ -38,3 +38,4 @@ from .svd_entropy import svd_entropy
 from .zero_crossings import zero_crossings
 
 from .moment import moment
+from .bin_power import bin_power
