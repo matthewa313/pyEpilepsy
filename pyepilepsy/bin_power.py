@@ -25,7 +25,7 @@ def bin_power(sig):
     """
 
     c = abs ( np.fft.fft(sig) )
-    band = [0.5\1,4,7,12,30,70,180]
+    band = [0.1,4,7,12,30,70,180]
     power = np.array([0,0,0,0,0,0])
     for freq_index in [0,1,2,3,4,5]:
         freq = float(band[freq_index])
