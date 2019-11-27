@@ -29,7 +29,7 @@ def bin_power(sig):
     band_lower = [1,4,7.5,13,30]
     band_upper = [4,8,13,30,44]
     power = np.array([0,0,0,0,0,0])
-    for freq_index in [0,1,2,3,4,5]:
+    for freq_index in [0,1,2,3,4]:
         freq = float(band_lower[freq_index])
         next_freq = float(band_upper[freq_index])
         power[freq_index] = sum(
