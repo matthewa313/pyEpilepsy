@@ -25,11 +25,11 @@ def bin_power(sig):
     """
 
     c = abs ( np.fft.fft(sig) )
-    band = [0.1,4,7,12,30,70,180]
+    band = [(1,4), (4,8), (7.5,13), (13,30), (30,44)]
     power = np.array([0,0,0,0,0,0])
     for freq_index in [0,1,2,3,4,5]:
-        freq = float(band[freq_index])
-        next_freq = float(band[freq_index + 1])
+        freq = float(band[freq_index][0])
+        next_freq = float(band[freq_index][1])
         power[freq_index] = sum(
             c[int(np.floor(freq * 30)): 
                 int(np.floor(next_freq * 30))]
